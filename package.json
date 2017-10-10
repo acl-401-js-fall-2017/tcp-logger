@@ -1,0 +1,22 @@
+{
+  "name": "tcp-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "//pretest": "npm run lint",
+    "test": "mocha",
+    "start": "npm run test -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirrorapps/tcp-logger.git"
+  },
+  "author": "Eli Speigel <eli.speigel@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mirrorapps/tcp-logger/issues"
+  },
+  "homepage": "https://github.com/mirrorapps/tcp-logger#readme"
+}
