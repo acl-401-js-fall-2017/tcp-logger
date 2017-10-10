@@ -41,12 +41,14 @@ describe('chat app server', () => {
             client1.write('Client One');
             openClient((err, client2) => {
                 client2.write('Client Two', () => {
-                    done();
+                    setTimeout( () => {
+                        fs.readFile(logFile, 'utf8', (err, data) => {
+                            assert.deepEqual(data, 'yay');
+                            done();
+                        });
+                    });
                 });
-                
             });
         });
     });
-
-
 });
