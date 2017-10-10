@@ -1,1 +1,2 @@
-first message by client 1some message client 2
+Tue Oct 10 2017 13:20:29 GMT-0700 (PDT)  **  client 1
+Tue Oct 10 2017 13:20:29 GMT-0700 (PDT)  **  client 2
