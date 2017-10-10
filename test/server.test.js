@@ -4,25 +4,25 @@ const net = require('net');
 const fs = require('fs');
 const path = require('path');
 
-describe('chat app server', () => {
+describe.skip('chat app server', () => {
     const port = 15688;
     const logFile = path.join(__dirname, 'log.txt');
 
     beforeEach(done => {
         fs.unlink(logFile, err => {
-            if(err && err.code !== 'ENOENT') done(err);
+            if (err && err.code !== 'ENOENT') done(err);
             done();
         });
     });
-    
+
     let clients = null;
     let server = null;
     beforeEach(done => {
         clients = [];
-        server = createLogServer(logFile);
+        server = createLogServer.timestamp(logFile);
         server.listen(port, done);
     });
-    
+
     afterEach(() => {
         clients.forEach(client => client.destroy());
         server.close();
@@ -38,16 +38,17 @@ describe('chat app server', () => {
 
     it('runs a test', done => {
         openClient((err, client1) => {
+            client1.write('some message 1-1');
             openClient((err, client2) => {
                 // do client.write calls
                 // on last client.write call, you need to use the
                 // write callback to *wait" for the socket to finish before you test the log file
-                client2.write('some message', () => {
-                    // read log file and test here!
-                    
+                client1.write('some message 1-2');
+                client2.write('some message 2-1', () => {
                     done();
                 });
-                
+
+
             });
         });
     });
