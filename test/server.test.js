@@ -3,6 +3,7 @@ const createLogServer = require('../lib/create-log-server');
 const net = require('net');
 const fs = require('fs');
 const path = require('path');
+const testSupport = require('../lib/test-support');
 
 describe('chat app server', () => {
     const port = 15688;
@@ -43,8 +44,10 @@ describe('chat app server', () => {
                 client2.write('Client Two', () => {
                     setTimeout( () => {
                         fs.readFile(logFile, 'utf8', (err, data) => {
-                            assert.deepEqual(data, 'yay');
-                            done();
+                            testSupport(logFile, (err, data2) => {
+                                assert.deepEqual(data, data2);
+                                done();
+                            });
                         });
                     });
                 });
