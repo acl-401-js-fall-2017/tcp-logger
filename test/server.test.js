@@ -45,10 +45,31 @@ describe('chat app server', () => {
                  // read log file and test
                 client2.write('HELLO WORLD!', () => {
                     setTimeout(() =>{
-                        fs.readFile(logFile, 'utf8', (err,loggedData) =>{
+                        fs.readFile(logFile, 'utf8', (err,loggedData) => {
                             if(err) return done(err);
                         });
                         done();
+                    });
+                }); 
+            });
+        });
+    });
+    
+    it('checks log formatting',done => {
+        openClient((err, client1) => {
+            openClient((err, client2) => {
+                // do client.write calls
+                client1.write('hello world!');
+                 // read log file and test
+                client2.write('HELLO WORLD!', () => {
+                    setTimeout(() =>{
+                        fs.readFile(logFile, 'utf8', (err,loggedData) => {
+                            if(err) return done(err);
+                            let msg = loggedData.split('\n');
+                            let splitMsg = msg[0].split('**')
+                            assert.deepEqual(splitMsg.length, 2);
+                            done();
+                        });
                     });
                 }); 
             });
