@@ -44,6 +44,7 @@ describe('chat app server', () => {
                 // on last client.write call, you need to use the
                 // write callback to *wait" for the socket to finish before you test the log file
                 client2.write('some message', () => {
+                    
                     // read log file and test here!
                     console.log('AM I CALLED!?!?!??!?');
                     done();
