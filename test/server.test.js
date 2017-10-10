@@ -1,5 +1,6 @@
 const assert = require('assert');
 const createLogServer = require('../lib/create-log-server');
+// const createLogServer = require('../server');
 const net = require('net');
 const fs = require('fs');
 const path = require('path');
@@ -40,11 +41,17 @@ describe('chat app server', () => {
         openClient((err, client1) => {
             openClient((err, client2) => {
                 // do client.write calls
-                
-                // read log file and test
+                client1.write('hello world!');
+                 // read log file and test
+                client2.write('HELLO WORLD!', () => {
+                    setTimeout(() =>{
+                        fs.readFile(logFile, 'utf8', (err,loggedData) =>{
+                            if(err) return done(err);
+                        });
+                        done();
+                    });
+                }); 
             });
         });
     });
-
-
 });
