@@ -37,7 +37,7 @@ describe('chat app server', () => {
         });
     }
 
-    it('runs a test', done => {
+    it('test if the file exists and has messages from both clients', done => {
         openClient((err, client1) => {
             openClient((err, client2) => {
                 // do client.write calls
@@ -67,7 +67,9 @@ describe('chat app server', () => {
                             if(err) return done(err);
                             let msg = loggedData.split('\n');
                             let splitMsg = msg[0].split('**')
-                            assert.deepEqual(splitMsg.length, 2);
+                            assert.deepEqual(isNaN(splitMsg[0]), true);
+                            assert.deepEqual(splitMsg[1], ' hello world!');
+                            
                             done();
                         });
                     });
