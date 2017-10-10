@@ -53,8 +53,8 @@ describe('chat app server', () => {
                             let logDates = [];
                             parseLog(logFile, logData => {
 
+                                // test for correct messages
                                 logMessages = logData.map(lineObj => lineObj.message);
-                                logDates = logData.map(lineObj => lineObj.time);
                                 
                                 assert.deepEqual(
                                     logMessages,
@@ -67,6 +67,9 @@ describe('chat app server', () => {
                                     ]
                                 );
 
+                                // test for valid dates
+                                logDates = logData.map(lineObj => lineObj.time);
+                                
                                 logDates.forEach(date => {
                                     assert.ok(!isNaN(new Date(date).getTime()));
                                 });
