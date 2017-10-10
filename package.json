@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lib": "lib",
+    "test": "mocha",
+    "start": "npm run test -- -w"
   },
   "repository": {
     "type": "git",
