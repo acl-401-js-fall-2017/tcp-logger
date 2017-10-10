@@ -42,7 +42,8 @@ describe('chat app server', () => {
                 // do client.write calls
                 // on last client.write call, you need to use the
                 // write callback to *wait" for the socket to finish before you test the log file
-                client2.write('some message', () => {
+                client1.write('first message by client 1');
+                client2.write('some message client 2', () => {
                     // read log file and test here!
                     
                     done();

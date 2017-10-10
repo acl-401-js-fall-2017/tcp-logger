@@ -1,0 +1,17 @@
+{
+  "name": "TCP-Logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha",
+    "start": "npm run test -- -w"
+  },
+  "author": "Michele Greenwood <mugreenwood.pdx@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "mocha": "^4.0.1"
+  }
+}
