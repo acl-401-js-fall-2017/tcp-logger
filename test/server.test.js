@@ -3,6 +3,7 @@ const createLogServer = require('../lib/create-log-server');
 const net = require('net');
 const fs = require('fs');
 const path = require('path');
+const testSupport = require('../lib/test-support');
 
 describe('chat app server', () => {
     const port = 15688;
@@ -38,14 +39,21 @@ describe('chat app server', () => {
 
     it('runs a test', done => {
         openClient((err, client1) => {
+            client1.write('Client One');
+
             openClient((err, client2) => {
-                // do client.write calls
-                // on last client.write call, you need to use the
-                // write callback to *wait" for the socket to finish before you test the log file
-                client2.write('some message', () => {
+                client2.write('client Two', () => {
+                    setTimeout(() => {
+                        fs.readFile(logFile, 'utf8', (err, data) => {
+                            testSupport(logFile, (err, data2) => {
+                                assert.deepEqual(data, data2);
+                                done();
+
+                            });
+                        });
+
+                    });
                     // read log file and test here!
-                    
-                    done();
                 });
                 
             });
