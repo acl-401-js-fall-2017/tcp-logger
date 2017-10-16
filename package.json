@@ -1,0 +1,24 @@
+{
+  "name": "tcp-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.test.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "npm run test -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erdemkoral/tcp-logger.git"
+  },
+  "author": "Erdem Koral",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erdemkoral/tcp-logger/issues"
+  },
+  "homepage": "https://github.com/erdemkoral/tcp-logger#readme",
+  "dependencies": {
+    "eslint": "^4.8.0",
+    "mocha": "^4.0.1"
+  }
+}
