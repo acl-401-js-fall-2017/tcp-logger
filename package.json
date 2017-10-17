@@ -1,0 +1,22 @@
+{
+  "name": "tcp-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShaneMoyo/tcp-logger.git"
+  },
+  "author": "Shane Moyo <smoyo@pdx.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShaneMoyo/tcp-logger/issues"
+  },
+  "homepage": "https://github.com/ShaneMoyo/tcp-logger#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
