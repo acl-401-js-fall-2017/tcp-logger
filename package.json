@@ -15,7 +15,7 @@
   "author": "David Nishikawa <triptype@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DaNish808/tcp-logger/issues"
+
   },
   "homepage": "https://github.com/DaNish808/tcp-logger#readme",
   "devDependencies": {

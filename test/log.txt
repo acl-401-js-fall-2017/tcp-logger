@@ -1,5 +1,2 @@
-Tue Oct 10 2017 13:23:13 GMT-0700 (Pacific Daylight Time) ** new client connected
-Tue Oct 10 2017 13:23:13 GMT-0700 (Pacific Daylight Time) ** this is a message
-Tue Oct 10 2017 13:23:13 GMT-0700 (Pacific Daylight Time) ** new client connected
-Tue Oct 10 2017 13:23:13 GMT-0700 (Pacific Daylight Time) ** second message from cli1
-Tue Oct 10 2017 13:23:13 GMT-0700 (Pacific Daylight Time) ** some message
+Tue Oct 17 2017 09:07:51 GMT-0700 (PDT) ** client Ones message here 
+Tue Oct 17 2017 09:07:51 GMT-0700 (PDT) ** client Twos message here 
